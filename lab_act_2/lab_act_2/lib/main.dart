@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:lab_act_2/dice_roller.dart';
  
-void main() {
-  runApp(const MyApp());
+var currentDiceImage = 'assets/dice-images/dice-2.png';
+void rollDice() {
+  currentDiceImage = 'assets/dice-images/dice-4.png';
 }
  
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
- 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+void main() {
+  runApp(
+    MaterialApp(
       home: Scaffold(
         body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Color.fromRGBO(255, 23, 7, 1),
-              Color.fromARGB(255, 230, 106, 192),
-            ]),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [const Color.fromARGB(255, 235, 70, 70), const Color.fromARGB(255, 223, 91, 135)]),
           ),
-          child: Center(
-            child: Image.asset('assets/dice-images/dice-2.png'
-            ),
-          ),
+          child: Center(child: DiceRoller()),
         ),
       ),
-    );
-  }
+    ),
+  );
 }
